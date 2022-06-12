@@ -1,13 +1,12 @@
     // constants
-    const COLOR_BG = "black";
-    const COLOR_CUBE = "royalblue";
-    const R1 = 100; // 도넛 두께
-    const R2 = 200; // 도넛 반경
-    const DISTANCE = 5000;
-    const SPACE = 0.1;
     const h = document.documentElement.clientHeight;
     const w = document.documentElement.clientWidth;
-    const AXIS = w / 2;
+    const COLOR_BG = "black";
+    const COLOR_CUBE = "royalblue";
+    const R2 = Math.min(w,h) * 1/3; // 도넛 반경
+    const R1 = R2 * 1/2; // 도넛 두께
+    const DISTANCE = 5000;
+    const SPACE = 0.1;
     const SPEED = 0.01;
     const SIZE = 200;
     // set up the canvas and context
