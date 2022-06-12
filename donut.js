@@ -7,7 +7,7 @@
     const R1 = R2 * 1/2; // 도넛 두께
     const DISTANCE = 5000;
     const SPACE = 0.1;
-    const SPEED = 0.01;
+    const SPEED = 0.02;
     const SIZE = 200;
     // set up the canvas and context
     const canvas = document.createElement("canvas");
