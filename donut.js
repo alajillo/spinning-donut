@@ -5,7 +5,8 @@
     const COLOR_CUBE = "royalblue";
     const R2 = Math.min(w,h) * 1/3; // 도넛 반경
     const R1 = R2 * 1/2; // 도넛 두께
-    const DISTANCE = 5000;
+    const DISTANCE = 500;
+    let Zoom = 1;
     const SPACE = 0.1;
     const SPEED = 0.02;
     const SIZE = 200;
@@ -13,7 +14,11 @@
     const canvas = document.createElement("canvas");
     document.body.appendChild(canvas);
     const ctx = canvas.getContext("2d");
+    window.addEventListener('wheel',(e)=>{
+         if(e.deltaY > 0) Zoom += 10;
+         if(e.deltaY < 0) Zoom -= 10;
 
+    })
     // dimensions
     canvas.height = h;
     canvas.width = w;
@@ -59,6 +64,7 @@
         requestAnimationFrame(render);
     }
     function convert3D({x,y,z}){
+        z = z + Zoom;
         return {
             x : (x/(z+DISTANCE)) * DISTANCE,
             y : (y/(z+DISTANCE)) * DISTANCE,
