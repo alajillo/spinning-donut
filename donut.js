@@ -12,9 +12,11 @@
     const SIZE = 200;
     // set up the canvas and context
     const canvas = document.createElement("canvas");
+    canvas.style.scrollBehavior = 'none'
     document.body.appendChild(canvas);
     const ctx = canvas.getContext("2d");
-    window.addEventListener('wheel',(e)=>{
+    canvas.addEventListener('wheel',(e)=>{
+        e.preventDefault();
          if(e.deltaY > 0) Zoom += 10;
          if(e.deltaY < 0) Zoom -= 10;
 
